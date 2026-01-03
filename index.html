@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Repeaters Official - Government Exam Mentorship</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Red highlight for areas you need to upload */
+        .upload-area {
+            border: 2px dashed #ff4444 !important;
+            background: rgba(255, 68, 68, 0.05) !important;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #ff4444;
+        }
+        
+        .upload-area i {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .upload-text {
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <i class="fas fa-redo-alt fa-spin"></i>
+                <h2>The Repeaters Official</h2>
+            </div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-redo-alt"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>THE REPEATERS OFFICIAL</h1>
+                    <p>Government Exam Mentorship</p>
+                </div>
+            </a>
+            
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="mentorship.html"><i class="fas fa-graduation-cap"></i> Mentorship</a></li>
+                <li><a href="quiz.html"><i class="fas fa-question-circle"></i> Quizzes</a></li>
+                <li><a href="about.html"><i class="fas fa-users"></i> About Us</a></li>
+                <li><a href="contact.html"><i class="fas fa-phone-alt"></i> Contact</a></li>
+                <li id="userAuth">
+                    <!-- Will be populated by JavaScript -->
+                </li>
+                <li id="adminLink" style="display: none;">
+                    <a href="quiz-admin.html" class="btn btn-admin">
+                        <i class="fas fa-cog"></i> Admin
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>THE REPEATERS OFFICIAL</h1>
+                <h2>India's #1 Government Exam Mentorship Platform</h2>
+                <p>Join thousands of successful candidates who cracked SSC CGL, CHSL, MTS, NTPC, and All One Day Exams with our proven mentorship program.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3><i class="fas fa-user-graduate"></i> 15,000+</h3>
+                        <p>Students Selected</p>
+                    </div>
+                    <div class="stat">
+                        <h3><i class="fas fa-trophy"></i> 99%</h3>
+                        <p>Success Rate</p>
+                    </div>
+                    <div class="stat">
+                        <h3><i class="fas fa-chalkboard-teacher"></i> 60+</h3>
+                        <p>Expert Mentors</p>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons">
+                    <a href="mentorship.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-rocket"></i> Join Mentorship
+                    </a>
+                    <a href="quiz.html" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-play-circle"></i> Try Free Quiz
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="floating-badges">
+                    <div class="exam-badge">
+                        <i class="fas fa-file-alt"></i> SSC CGL
+                    </div>
+                    <div class="exam-badge">
+                        <i class="fas fa-train"></i> NTPC
+                    </div>
+                    <div class="exam-badge">
+                        <i class="fas fa-bolt"></i> One Day Exams
+                    </div>
+                    <div class="exam-badge">
+                        <i class="fas fa-graduation-cap"></i> CHSL/MTS
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentorship Programs Carousel -->
+    <section class="programs-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Mentorship Programs</h2>
+                <p>Scroll through our specialized mentorship programs for different exams</p>
+            </div>
+            
+            <div class="swiper programs-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 - SSC CGL -->
+                    <div class="swiper-slide">
+                        <div class="program-card">
+                            <div class="program-header" style="background: linear-gradient(135deg, #2563eb, #1d4ed8);">
+                                <h3>SSC CGL 2026</h3>
+                                <p>Complete Tier I-IV Preparation</p>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-features">
+                                    <span><i class="fas fa-check"></i> Daily Live Classes</span>
+                                    <span><i class="fas fa-check"></i> 500+ Mock Tests</span>
+                                    <span><i class="fas fa-check"></i> Personal Mentorship</span>
+                                    <span><i class="fas fa-check"></i> Google Drive Access</span>
+                                </div>
+                                <div class="program-price">
+                                    <h4>₹8,999</h4>
+                                    <p>Complete Course</p>
+                                </div>
+                                <a href="mentorship.html?program=ssc-cgl" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2 - NTPC -->
+                    <div class="swiper-slide">
+                        <div class="program-card">
+                            <div class="program-header" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                                <h3>Railway NTPC 2026</h3>
+                                <p>CBT I & II Complete Preparation</p>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-features">
+                                    <span><i class="fas fa-check"></i> Railway GK Focus</span>
+                                    <span><i class="fas fa-check"></i> 300+ Mock Tests</span>
+                                    <span><i class="fas fa-check"></i> Previous Year Analysis</span>
+                                    <span><i class="fas fa-check"></i> Doubt Solving</span>
+                                </div>
+                                <div class="program-price">
+                                    <h4>₹7,499</h4>
+                                    <p>Complete Course</p>
+                                </div>
+                                <a href="mentorship.html?program=ntpc" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 3 - One Day Exams -->
+                    <div class="swiper-slide">
+                        <div class="program-card">
+                            <div class="program-header" style="background: linear-gradient(135deg, #10b981, #059669);">
+                                <h3>One Day Exams Package</h3>
+                                <p>Banking, Insurance, SSC CHSL/MTS</p>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-features">
+                                    <span><i class="fas fa-check"></i> All Exams Coverage</span>
+                                    <span><i class="fas fa-check"></i> 400+ Mock Tests</span>
+                                    <span><i class="fas fa-check"></i> Speed & Accuracy</span>
+                                    <span><i class="fas fa-check"></i> Current Affairs</span>
+                                </div>
+                                <div class="program-price">
+                                    <h4>₹9,999</h4>
+                                    <p>Complete Package</p>
+                                </div>
+                                <a href="mentorship.html?program=oneday" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 4 - Mentorship 2.0 -->
+                    <div class="swiper-slide">
+                        <div class="program-card featured">
+                            <div class="program-badge">🔥 Most Popular</div>
+                            <div class="program-header" style="background: linear-gradient(135deg, #ec4899, #db2777);">
+                                <h3>SSC 2026 Mentorship 2.0</h3>
+                                <p>Complete Preparation Till CGL 26 Pre</p>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-features">
+                                    <span><i class="fas fa-check"></i> Daily Targets</span>
+                                    <span><i class="fas fa-check"></i> Instant Doubt Solving</span>
+                                    <span><i class="fas fa-check"></i> Strategy Calls</span>
+                                    <span><i class="fas fa-check"></i> Calculation Sheets</span>
+                                </div>
+                                <div class="program-price">
+                                    <h4>₹499</h4>
+                                    <p>Limited Time Offer</p>
+                                </div>
+                                <a href="buy.html" class="btn btn-primary">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mentors Section -->
+    <section class="mentors-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Expert Mentors</h2>
+                <p>Learn from the best in the industry</p>
+            </div>
+            
+            <div class="mentors-grid">
+                <!-- Mentor 1 -->
+                <div class="mentor-card">
+                    <div class="mentor-image upload-area">
+                        <i class="fas fa-user-plus"></i>
+                        <div class="upload-text">Upload Nitin Sharma Photo</div>
+                    </div>
+                    <div class="mentor-info">
+                        <h3>Nitin Sharma</h3>
+                        <p class="mentor-role">Quantitative Aptitude Expert</p>
+                        <p class="mentor-bio">8+ years experience, 5000+ students selected</p>
+                        <div class="mentor-social">
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mentor 2 -->
+                <div class="mentor-card">
+                    <div class="mentor-image upload-area">
+                        <i class="fas fa-user-plus"></i>
+                        <div class="upload-text">Upload Anil Yadav Photo</div>
+                    </div>
+                    <div class="mentor-info">
+                        <h3>Anil Yadav</h3>
+                        <p class="mentor-role">General Studies Expert</p>
+                        <p class="mentor-bio">7+ years experience, Current Affairs Specialist</p>
+                        <div class="mentor-social">
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mentor 3 -->
+                <div class="mentor-card">
+                    <div class="mentor-image upload-area">
+                        <i class="fas fa-user-plus"></i>
+                        <div class="upload-text">Upload Arjun Joshi Photo</div>
+                    </div>
+                    <div class="mentor-info">
+                        <h3>Arjun Joshi</h3>
+                        <p class="mentor-role">Reasoning & English Expert</p>
+                        <p class="mentor-bio">6+ years experience, Shortcut Methods Specialist</p>
+                        <div class="mentor-social">
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mentor 4 -->
+                <div class="mentor-card">
+                    <div class="mentor-image upload-area">
+                        <i class="fas fa-user-plus"></i>
+                        <div class="upload-text">Upload Rahul Best Photo</div>
+                    </div>
+                    <div class="mentor-info">
+                        <h3>Rahul Best</h3>
+                        <p class="mentor-role">Math & Calculation Expert</p>
+                        <p class="mentor-bio">9+ years experience, Calculation Sheet Creator</p>
+                        <div class="mentor-social">
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mentor 5 -->
+                <div class="mentor-card">
+                    <div class="mentor-image upload-area">
+                        <i class="fas fa-user-plus"></i>
+                        <div class="upload-text">Upload Vikram Photo</div>
+                    </div>
+                    <div class="mentor-info">
+                        <h3>Vikram</h3>
+                        <p class="mentor-role">Strategy & Motivation Expert</p>
+                        <p class="mentor-bio">10+ years experience, 10,000+ students guided</p>
+                        <div class="mentor-social">
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose The Repeaters Official?</h2>
+                <p>Our unique features that guarantee your success</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Daily Targets</h3>
+                    <p>Structured daily study targets to keep you on track</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Instant Doubt Solving</h3>
+                    <p>24/7 doubt solving via Telegram & WhatsApp groups</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-phone-volume"></i>
+                    </div>
+                    <h3>Strategy Calls</h3>
+                    <p>Weekly strategy calls with mentors for personalized guidance</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Calculation Sheets</h3>
+                    <p>Special calculation sheets for speed and accuracy</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Performance Analytics</h3>
+                    <p>Detailed analysis of mock tests and performance tracking</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud-download-alt"></i>
+                    </div>
+                    <h3>Google Drive Access</h3>
+                    <p>All study materials accessible via organized Google Drive</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Crack Your Dream Government Job?</h2>
+                <p>Join The Repeaters Official today and start your journey towards success</p>
+                <div class="cta-buttons">
+                    <a href="buy.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-shopping-cart"></i> Enroll Now @ ₹499
+                    </a>
+                    <a href="quiz.html" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-question-circle"></i> Try Free Quiz
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-redo-alt"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h3>THE REPEATERS OFFICIAL</h3>
+                            <p>Government Exam Mentorship</p>
+                        </div>
+                    </div>
+                    <p>India's leading mentorship platform for SSC, Railway, Banking and all government exams. Join thousands of successful candidates.</p>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="mentorship.html"><i class="fas fa-chevron-right"></i> Mentorship</a></li>
+                        <li><a href="quiz.html"><i class="fas fa-chevron-right"></i> Quizzes</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Exam Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="mentorship.html?program=ssc-cgl"><i class="fas fa-chevron-right"></i> SSC CGL</a></li>
+                        <li><a href="mentorship.html?program=ssc-chsl"><i class="fas fa-chevron-right"></i> SSC CHSL</a></li>
+                        <li><a href="mentorship.html?program=ssc-mts"><i class="fas fa-chevron-right"></i> SSC MTS</a></li>
+                        <li><a href="mentorship.html?program=ntpc"><i class="fas fa-chevron-right"></i> Railway NTPC</a></li>
+                        <li><a href="mentorship.html?program=banking"><i class="fas fa-chevron-right"></i> Banking Exams</a></li>
+                        <li><a href="mentorship.html?program=insurance"><i class="fas fa-chevron-right"></i> Insurance Exams</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> support@therepeatersofficial.com</li>
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Delhi NCR, India</li>
+                        <li><i class="fab fa-whatsapp"></i> +91 98765 43210</li>
+                    </ul>
+                    
+                    <div class="newsletter">
+                        <h5>Get Free Study Material</h5>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Enter your email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i> Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 THE REPEATERS OFFICIAL. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="refund.html">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize Swiper
+        const swiper = new Swiper('.programs-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+                1280: {
+                    slidesPerView: 4,
+                }
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+        });
+        
+        // Hide loading screen
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loadingScreen').style.display = 'none';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
