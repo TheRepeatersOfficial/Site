@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSC 2026 Mentorship - The Repeaters Official</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .mentorship-hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mentorship-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" opacity="0.03"><path d="M0 0h1200v1200H0V0zm200 200h800v800H200V200z" fill="white"/></svg>');
+        }
+        
+        .mentorship-badge {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            padding: 8px 25px;
+            border-radius: var(--radius-full);
+            font-size: 1rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .mentorship-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .mentorship-hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #f59e0b;
+        }
+        
+        .mentorship-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        .mentorship-price {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            display: inline-block;
+            margin: 40px 0;
+            border: 2px solid #f59e0b;
+        }
+        
+        .mentorship-price h3 {
+            font-size: 3.5rem;
+            color: #f59e0b;
+            margin-bottom: 10px;
+        }
+        
+        .mentorship-price p {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+        
+        .features-details {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .feature-detail-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-md);
+            border-left: 5px solid #2563eb;
+            transition: var(--transition);
+        }
+        
+        .feature-detail-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .feature-detail-card h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .feature-detail-card h3 i {
+            color: #2563eb;
+            font-size: 1.8rem;
+        }
+        
+        .feature-detail-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .feature-list {
+            list-style: none;
+        }
+        
+        .feature-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--dark);
+        }
+        
+        .feature-list li i {
+            color: #10b981;
+        }
+        
+        .enrollment-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            text-align: center;
+        }
+        
+        .enrollment-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .step-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .step-card h3 {
+            font-size: 1.4rem;
+            margin: 20px 0 15px;
+            color: var(--dark);
+        }
+        
+        .step-card p {
+            color: var(--gray);
+        }
+        
+        .whatsapp-enroll {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            padding: 18px 40px;
+            border-radius: var(--radius-full);
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            transition: var(--transition);
+            margin-top: 30px;
+        }
+        
+        .whatsapp-enroll:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+        }
+        
+        .testimonials-mentorship {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .faq-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: var(--radius-lg);
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .faq-question {
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--dark);
+            border-bottom: 1px solid transparent;
+        }
+        
+        .faq-question.active {
+            border-bottom-color: var(--gray-light);
+        }
+        
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            padding: 0 25px 25px;
+            max-height: 500px;
+        }
+        
+        @media (max-width: 768px) {
+            .mentorship-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .mentorship-hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .mentorship-price h3 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-redo-alt"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>THE REPEATERS OFFICIAL</h1>
+                    <p>Government Exam Mentorship</p>
+                </div>
+            </a>
+            
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="mentorship.html" class="active"><i class="fas fa-graduation-cap"></i> Mentorship</a></li>
+                <li><a href="quiz.html"><i class="fas fa-question-circle"></i> Quizzes</a></li>
+                <li><a href="about.html"><i class="fas fa-users"></i> About Us</a></li>
+                <li><a href="contact.html"><i class="fas fa-phone-alt"></i> Contact</a></li>
+                <li id="userAuth">
+                    <!-- Will be populated by JavaScript -->
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mentorship Hero -->
+    <section class="mentorship-hero">
+        <div class="container">
+            <div class="mentorship-badge">🚀 LAUNCHING SOON</div>
+            <h1>SSC 2026</h1>
+            <h2>THE REPEATERS MENTORSHIP 2.0</h2>
+            <p>Complete mentorship program for SSC CGL / NTPC 2026 with daily targets, instant doubt solving, strategy calls, and calculation sheets.</p>
+            
+            <div class="mentorship-price">
+                <h3>₹499/-</h3>
+                <p>Validity: Till CGL 26 Pre</p>
+            </div>
+            
+            <a href="buy.html" class="btn btn-primary btn-lg" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                <i class="fas fa-rocket"></i> Enroll Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Details -->
+    <section class="features-details">
+        <div class="container">
+            <div class="section-title">
+                <h2>Program Features</h2>
+                <p>Everything you need to crack SSC CGL / NTPC 2026</p>
+            </div>
+            
+            <div class="feature-detail-card">
+                <h3><i class="fas fa-bullseye"></i> Daily Targets</h3>
+                <p>Structured daily study plan with specific targets to keep you on track and motivated.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Daily study schedule</li>
+                    <li><i class="fas fa-check"></i> Topic-wise targets</li>
+                    <li><i class="fas fa-check"></i> Weekly revision plan</li>
+                    <li><i class="fas fa-check"></i> Progress tracking</li>
+                </ul>
+            </div>
+            
+            <div class="feature-detail-card">
+                <h3><i class="fas fa-comments"></i> Instant Doubt Solving</h3>
+                <p>24/7 doubt solving support through dedicated Telegram and WhatsApp groups.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Dedicated doubt groups</li>
+                    <li><i class="fas fa-check"></i> Instant responses</li>
+                    <li><i class="fas fa-check"></i> Video solutions</li>
+                    <li><i class="fas fa-check"></i> Peer learning</li>
+                </ul>
+            </div>
+            
+            <div class="feature-detail-card">
+                <h3><i class="fas fa-phone-volume"></i> Strategy Calls</h3>
+                <p>Weekly strategy calls with mentors for personalized guidance and motivation.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Weekly live sessions</li>
+                    <li><i class="fas fa-check"></i> One-on-one guidance</li>
+                    <li><i class="fas fa-check"></i> Study plan optimization</li>
+                    <li><i class="fas fa-check"></i> Motivation sessions</li>
+                </ul>
+            </div>
+            
+            <div class="feature-detail-card">
+                <h3><i class="fas fa-calculator"></i> Calculation Sheets</h3>
+                <p>Special calculation sheets and shortcut methods for speed and accuracy.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Speed calculation techniques</li>
+                    <li><i class="fas fa-check"></i> Shortcut methods</li>
+                    <li><i class="fas fa-check"></i> Practice sheets</li>
+                    <li><i class="fas fa-check"></i> Accuracy improvement</li>
+                </ul>
+            </div>
+            
+            <div class="feature-detail-card">
+                <h3><i class="fas fa-chart-line"></i> Performance Analytics</h3>
+                <p>Detailed analysis of mock tests and performance tracking with improvement plans.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Mock test analysis</li>
+                    <li><i class="fas fa-check"></i> Performance reports</li>
+                    <li><i class="fas fa-check"></i> Weakness identification</li>
+                    <li><i class="fas fa-check"></i> Improvement plans</li>
+                </ul>
+            </div>
+            
+            <div class="feature-detail-card">
+                <h3><i class="fas fa-cloud"></i> Study Material Access</h3>
+                <p>Complete study material accessible via organized Google Drive with regular updates.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> PDF study material</li>
+                    <li><i class="fas fa-check"></i> Previous year papers</li>
+                    <li><i class="fas fa-check"></i> Current affairs</li>
+                    <li><i class="fas fa-check"></i> Regular updates</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enrollment Section -->
+    <section class="enrollment-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>How to Enroll</h2>
+                <p>Join The Repeaters Mentorship 2.0 in 3 simple steps</p>
+            </div>
+            
+            <div class="enrollment-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Make Payment</h3>
+                    <p>Pay ₹499 through UPI, Net Banking, or any payment method</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Send Screenshot</h3>
+                    <p>Send payment screenshot on WhatsApp with your name and email</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Get Access</h3>
+                    <p>Receive login credentials and access to all study material within 24 hours</p>
+                </div>
+            </div>
+            
+            <a href="https://wa.me/919876543210?text=Hi,%20I%20want%20to%20enroll%20in%20The%20Repeaters%20Mentorship%202.0%20for%20SSC%202026.%20Please%20guide%20me%20with%20the%20enrollment%20process." 
+               target="_blank" 
+               class="whatsapp-enroll">
+                <i class="fab fa-whatsapp"></i> Click here to send screenshot on WhatsApp
+            </a>
+            
+            <p style="margin-top: 20px; color: var(--gray); font-size: 0.9rem;">
+                WhatsApp Number: +91 98765 43210
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our mentorship program</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is the validity of the mentorship program?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        The mentorship program is valid till SSC CGL 2026 Pre examination. You'll have access to all materials and support until the exam date.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What study material will be provided?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        You'll get complete PDF study material, previous year question papers, calculation sheets, current affairs compilation, and mock tests via Google Drive.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How are doubts solved?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Doubts are solved 24/7 through dedicated Telegram and WhatsApp groups. You can post your doubts and get instant responses from mentors and peers.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Are there any live classes?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, we conduct weekly strategy calls and topic-wise doubt clearing sessions. All sessions are recorded and made available for later viewing.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is there any refund policy?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        We offer a 7-day refund policy if you're not satisfied with the program. However, once you access the study material, refund will not be provided.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I access the material on mobile?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, all study material is accessible on mobile, tablet, and desktop through Google Drive. You can study anytime, anywhere.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Don't Miss This Opportunity!</h2>
+                <p>Join The Repeaters Mentorship 2.0 today and start your journey towards cracking SSC CGL 2026</p>
+                <div class="cta-buttons">
+                    <a href="buy.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-shopping-cart"></i> Enroll Now @ ₹499
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-question-circle"></i> Have Questions?
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 THE REPEATERS OFFICIAL. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="refund.html">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Toggle active class
+                question.classList.toggle('active');
+                answer.classList.toggle('active');
+                
+                // Rotate icon
+                if (question.classList.contains('active')) {
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
