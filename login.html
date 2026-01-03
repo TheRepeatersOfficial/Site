@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - The Repeaters Official</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 20px 50px;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 100%);
+        }
+        
+        .login-box {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .login-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #2563eb, #10b981);
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .login-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .login-logo-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2563eb, #10b981);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .login-logo-icon i {
+            font-size: 28px;
+            color: white;
+        }
+        
+        .login-header h1 {
+            font-size: 2.5rem;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+        
+        .login-header p {
+            color: #64748b;
+        }
+        
+        .google-login-btn {
+            width: 100%;
+            padding: 16px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #444;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .google-login-btn:hover {
+            background: #f8fafc;
+            border-color: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .google-login-btn img {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .divider {
+            text-align: center;
+            position: relative;
+            margin: 30px 0;
+            color: #64748b;
+        }
+        
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 45%;
+            height: 1px;
+            background: #e2e8f0;
+        }
+        
+        .divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 45%;
+            height: 1px;
+            background: #e2e8f0;
+        }
+        
+        .login-form .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .login-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #1e293b;
+        }
+        
+        .login-form input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .login-form input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+            outline: none;
+        }
+        
+        .forgot-password {
+            text-align: right;
+            margin-bottom: 25px;
+        }
+        
+        .forgot-password a {
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+        }
+        
+        .register-link {
+            text-align: center;
+            margin-top: 30px;
+            color: #64748b;
+        }
+        
+        .register-link a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .login-box {
+                padding: 40px 30px;
+            }
+            
+            .login-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-redo-alt"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>THE REPEATERS OFFICIAL</h1>
+                    <p>Government Exam Mentorship</p>
+                </div>
+            </a>
+            
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="mentorship.html"><i class="fas fa-graduation-cap"></i> Mentorship</a></li>
+                <li><a href="quiz.html"><i class="fas fa-question-circle"></i> Quizzes</a></li>
+                <li><a href="about.html"><i class="fas fa-users"></i> About Us</a></li>
+                <li><a href="contact.html"><i class="fas fa-phone-alt"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <div class="login-logo">
+                    <div class="login-logo-icon">
+                        <i class="fas fa-redo-alt"></i>
+                    </div>
+                </div>
+                <h1>Welcome Back</h1>
+                <p>Login to access your dashboard and continue learning</p>
+            </div>
+            
+            <button class="google-login-btn" id="googleLoginBtn">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google">
+                Continue with Google
+            </button>
+            
+            <div class="divider">Or login with email</div>
+            
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                
+                <div class="forgot-password">
+                    <a href="#" id="forgotPassword">Forgot Password?</a>
+                </div>
+                
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            
+            <div class="register-link">
+                Don't have an account? <a href="#" id="createAccount">Create Account</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 THE REPEATERS OFFICIAL. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="refund.html">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        // Google Login
+        document.getElementById('googleLoginBtn').addEventListener('click', () => {
+            const provider = new firebase.auth.GoogleAuthProvider();
+            
+            firebase.auth().signInWithPopup(provider)
+                .then((result) => {
+                    // Successful login
+                    const user = result.user;
+                    console.log('Logged in user:', user);
+                    
+                    // Check if user exists in Firestore
+                    db.collection('users').doc(user.uid).get()
+                        .then((doc) => {
+                            if (!doc.exists) {
+                                // Create new user document
+                                db.collection('users').doc(user.uid).set({
+                                    name: user.displayName,
+                                    email: user.email,
+                                    photoURL: user.photoURL,
+                                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                                    lastLogin: firebase.firestore.FieldValue.serverTimestamp(),
+                                    role: 'student',
+                                    membership: 'free'
+                                });
+                            } else {
+                                // Update last login
+                                db.collection('users').doc(user.uid).update({
+                                    lastLogin: firebase.firestore.FieldValue.serverTimestamp()
+                                });
+                            }
+                            
+                            // Redirect to homepage
+                            window.location.href = 'index.html';
+                        });
+                })
+                .catch((error) => {
+                    console.error('Login error:', error);
+                    alert('Login failed: ' + error.message);
+                });
+        });
+        
+        // Email/Password Login
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            firebase.auth().signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // Redirect to homepage
+                    window.location.href = 'index.html';
+                })
+                .catch((error) => {
+                    alert('Login failed: ' + error.message);
+                });
+        });
+        
+        // Create Account
+        document.getElementById('createAccount').addEventListener('click', (e) => {
+            e.preventDefault();
+            const email = prompt('Enter your email:');
+            if (email) {
+                const password = prompt('Enter your password:');
+                if (password) {
+                    firebase.auth().createUserWithEmailAndPassword(email, password)
+                        .then((userCredential) => {
+                            alert('Account created! Please login with your credentials.');
+                        })
+                        .catch((error) => {
+                            alert('Error: ' + error.message);
+                        });
+                }
+            }
+        });
+        
+        // Forgot Password
+        document.getElementById('forgotPassword').addEventListener('click', (e) => {
+            e.preventDefault();
+            const email = prompt('Enter your email to reset password:');
+            if (email) {
+                firebase.auth().sendPasswordResetEmail(email)
+                    .then(() => {
+                        alert('Password reset email sent! Check your inbox.');
+                    })
+                    .catch((error) => {
+                        alert('Error: ' + error.message);
+                    });
+            }
+        });
+    </script>
+</body>
+</html>
