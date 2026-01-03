@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzes - The Repeaters Official</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-redo-alt"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>THE REPEATERS OFFICIAL</h1>
+                    <p>Government Exam Mentorship</p>
+                </div>
+            </a>
+            
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="mentorship.html"><i class="fas fa-graduation-cap"></i> Mentorship</a></li>
+                <li><a href="quiz.html" class="active"><i class="fas fa-question-circle"></i> Quizzes</a></li>
+                <li><a href="about.html"><i class="fas fa-users"></i> About Us</a></li>
+                <li><a href="contact.html"><i class="fas fa-phone-alt"></i> Contact</a></li>
+                <li id="userAuth">
+                    <!-- Will be populated by JavaScript -->
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Quiz Header -->
+    <section class="quiz-header">
+        <div class="container">
+            <h1><i class="fas fa-question-circle"></i> THE REPEATERS OFFICIAL QUIZZES</h1>
+            <p>Test your knowledge and improve your speed with our expert-designed quizzes</p>
+        </div>
+    </section>
+
+    <!-- Quiz Categories -->
+    <section class="quiz-categories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Choose Your Quiz Category</h2>
+                <p>Practice makes perfect. Select a category to begin</p>
+            </div>
+            
+            <div class="categories-grid">
+                <!-- Calculation Quiz -->
+                <div class="category-card calculation">
+                    <div class="category-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Calculation Quizzes</h3>
+                        <p>Practice addition, subtraction, multiplication, division, and important formulas</p>
+                        <div class="category-stats">
+                            <span><i class="fas fa-clock"></i> Timed Tests</span>
+                            <span><i class="fas fa-chart-bar"></i> Performance Analytics</span>
+                        </div>
+                        <a href="quiz-calculation.html" class="btn btn-primary">Start Quiz</a>
+                    </div>
+                </div>
+                
+                <!-- GS Quiz -->
+                <div class="category-card gs">
+                    <div class="category-icon">
+                        <i class="fas fa-globe-asia"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>General Studies Quizzes</h3>
+                        <p>History, Geography, Polity, Economics, Science & Current Affairs</p>
+                        <div class="category-stats">
+                            <span><i class="fas fa-book"></i> Subject-wise</span>
+                            <span><i class="fas fa-trophy"></i> Difficulty Levels</span>
+                        </div>
+                        <a href="quiz-gs.html" class="btn btn-primary">Start Quiz</a>
+                    </div>
+                </div>
+                
+                <!-- English Quiz -->
+                <div class="category-card english">
+                    <div class="category-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>English Quizzes</h3>
+                        <p>Grammar, Vocabulary, Comprehension, Error Detection & Cloze Test</p>
+                        <div class="category-stats">
+                            <span><i class="fas fa-spell-check"></i> Grammar Focus</span>
+                            <span><i class="fas fa-book-reader"></i> Comprehension</span>
+                        </div>
+                        <a href="quiz-english.html" class="btn btn-primary">Start Quiz</a>
+                    </div>
+                </div>
+                
+                <!-- Reasoning Quiz -->
+                <div class="category-card reasoning">
+                    <div class="category-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Reasoning Quizzes</h3>
+                        <p>Verbal & Non-verbal reasoning, puzzles, seating arrangement, syllogism</p>
+                        <div class="category-stats">
+                            <span><i class="fas fa-puzzle-piece"></i> Puzzles</span>
+                            <span><i class="fas fa-chess-board"></i> Arrangements</span>
+                        </div>
+                        <a href="quiz-reasoning.html" class="btn btn-primary">Start Quiz</a>
+                    </div>
+                </div>
+                
+                <!-- Mock Tests -->
+                <div class="category-card mock">
+                    <div class="category-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Full Mock Tests</h3>
+                        <p>Complete exam simulation with previous year pattern and analysis</p>
+                        <div class="category-stats">
+                            <span><i class="fas fa-desktop"></i> Exam Simulation</span>
+                            <span><i class="fas fa-chart-line"></i> Detailed Analysis</span>
+                        </div>
+                        <a href="quiz-mock.html" class="btn btn-primary">Take Mock Test</a>
+                    </div>
+                </div>
+                
+                <!-- Daily Quiz -->
+                <div class="category-card daily">
+                    <div class="category-icon">
+                        <i class="fas fa-calendar-day"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Daily Quiz Challenge</h3>
+                        <p>Daily 20 questions to keep your preparation on track</p>
+                        <div class="category-stats">
+                            <span><i class="fas fa-fire"></i> Daily Challenge</span>
+                            <span><i class="fas fa-ranking-star"></i> Leaderboard</span>
+                        </div>
+                        <a href="quiz-daily.html" class="btn btn-primary">Today's Quiz</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Stats -->
+    <section class="performance-section" id="performance">
+        <div class="container">
+            <div class="section-title">
+                <h2>Your Performance</h2>
+                <p>Track your progress and improvement over time</p>
+            </div>
+            
+            <div class="performance-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalQuizzes">0</h3>
+                        <p>Quizzes Attempted</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="accuracyRate">0%</h3>
+                        <p>Average Accuracy</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="rank">--</h3>
+                        <p>Current Rank</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="timeSpent">0h</h3>
+                        <p>Time Spent</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="performance-chart upload-area" style="height: 300px; margin-top: 40px;">
+                <i class="fas fa-chart-line"></i>
+                <div class="upload-text">Performance Chart Area - Will show your progress graph</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Quizzes -->
+    <section class="recent-quizzes">
+        <div class="container">
+            <div class="section-title">
+                <h2>Recently Added Quizzes</h2>
+                <p>New quizzes added by our experts</p>
+            </div>
+            
+            <div class="quizzes-list" id="recentQuizzes">
+                <!-- Will be populated by JavaScript -->
+                <div class="loading-quizzes">Loading recent quizzes...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 THE REPEATERS OFFICIAL. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="refund.html">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/quiz.js"></script>
+    <script>
+        // Load user performance data
+        function loadPerformanceData() {
+            const user = firebase.auth().currentUser;
+            if (!user) {
+                // Redirect to login if not authenticated
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            // Load quiz history
+            db.collection('quiz_history')
+                .where('userId', '==', user.uid)
+                .get()
+                .then((querySnapshot) => {
+                    let totalQuizzes = 0;
+                    let totalCorrect = 0;
+                    let totalQuestions = 0;
+                    let totalTime = 0;
+                    
+                    querySnapshot.forEach((doc) => {
+                        const data = doc.data();
+                        totalQuizzes++;
+                        totalCorrect += data.correctAnswers || 0;
+                        totalQuestions += data.totalQuestions || 0;
+                        totalTime += data.timeSpent || 0;
+                    });
+                    
+                    // Update stats
+                    document.getElementById('totalQuizzes').textContent = totalQuizzes;
+                    
+                    const accuracy = totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
+                    document.getElementById('accuracyRate').textContent = accuracy + '%';
+                    
+                    const hours = Math.round(totalTime / 3600);
+                    document.getElementById('timeSpent').textContent = hours + 'h';
+                    
+                    // Load rank (simplified - in real app, calculate from all users)
+                    if (totalQuizzes > 0) {
+                        document.getElementById('rank').textContent = 'Top ' + Math.min(totalQuizzes * 10, 100);
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error loading performance data:', error);
+                });
+            
+            // Load recent quizzes
+            loadRecentQuizzes();
+        }
+        
+        function loadRecentQuizzes() {
+            db.collection('quizzes')
+                .orderBy('createdAt', 'desc')
+                .limit(6)
+                .get()
+                .then((querySnapshot) => {
+                    const container = document.getElementById('recentQuizzes');
+                    container.innerHTML = '';
+                    
+                    if (querySnapshot.empty) {
+                        container.innerHTML = '<div class="no-quizzes">No quizzes available yet.</div>';
+                        return;
+                    }
+                    
+                    querySnapshot.forEach((doc) => {
+                        const quiz = doc.data();
+                        const quizElement = document.createElement('div');
+                        quizElement.className = 'quiz-item';
+                        quizElement.innerHTML = `
+                            <div class="quiz-item-header">
+                                <h3>${quiz.title}</h3>
+                                <span class="quiz-category ${quiz.category}">${quiz.category}</span>
+                            </div>
+                            <div class="quiz-item-body">
+                                <p>${quiz.description || 'Test your knowledge'}</p>
+                                <div class="quiz-meta">
+                                    <span><i class="fas fa-question-circle"></i> ${quiz.questionCount || 20} Questions</span>
+                                    <span><i class="fas fa-clock"></i> ${quiz.timeLimit || 30} mins</span>
+                                    <span><i class="fas fa-users"></i> ${quiz.attempts || 0} Attempts</span>
+                                </div>
+                            </div>
+                            <div class="quiz-item-footer">
+                                <a href="quiz-start.html?id=${doc.id}" class="btn btn-primary">Start Quiz</a>
+                            </div>
+                        `;
+                        container.appendChild(quizElement);
+                    });
+                })
+                .catch((error) => {
+                    console.error('Error loading quizzes:', error);
+                });
+        }
+        
+        // Check authentication status
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                loadPerformanceData();
+            }
+        });
+    </script>
+</body>
+</html>
